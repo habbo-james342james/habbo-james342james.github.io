@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rank List - Federal Investigation Services</title>
+<meta property="og:site_name" content="Federal Investigation Services" />
+<meta property="og:title" content="Rank List" />
+<meta property="og:description" content="[cannot promote]" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Patua+One&family=Oswald:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root { --gold:#ffdb00; --gold2:#ffd700; --dark:#1a1a1a; }
+  body { font-family:'Montserrat', Arial, sans-serif; background:#0b0b0b; color:#fff; line-height:1.6; }
+
+  header { background:rgba(0,0,0,0.9); position:sticky; top:0; z-index:1000; border-bottom:2px solid var(--gold); }
+  .nav-container { max-width:1200px; margin:0 auto; padding:0.6rem 2%; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+  .logo img { height:50px; width:auto; display:block; }
+  nav ul { list-style:none; display:flex; gap:0.3rem; flex-wrap:wrap; align-items:center; }
+  nav li { position:relative; }
+  nav a { color:#fff; text-decoration:none; padding:0.5rem 1rem; font-family:'Oswald', sans-serif; font-weight:700; font-style:italic; text-transform:uppercase; letter-spacing:1px; font-size:0.95rem; display:block; transition:color .2s; }
+  nav a:hover, nav a.active { color:var(--gold); }
+  .dropdown { position:absolute; top:100%; left:0; background:#111; min-width:180px; display:none; border-top:2px solid var(--gold); z-index:10; }
+  li:hover .dropdown { display:block; }
+  .dropdown a { padding:0.6rem 1.2rem; font-size:0.85rem; white-space:nowrap; }
+  .dropdown a:hover { background:rgba(255,219,0,0.1); }
+  .hamburger { display:none; background:none; border:none; color:#fff; font-size:1.8rem; cursor:pointer; }
+
+  .hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+      url('https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/background-images/1250603927.jpg') center/cover no-repeat;
+    min-height:350px; display:flex; align-items:center; justify-content:center; padding:3rem 5%;
+  }
+  .hero h1 { font-family:'Luckiest Guy', cursive; font-weight:bold; font-style:italic; text-transform:uppercase; letter-spacing:1px; font-size:clamp(2rem, 5vw, 3.5rem); color:#fff; text-align:center; text-shadow:2px 2px 8px rgba(0,0,0,0.8); }
+  .hero h1 .gold { color:var(--gold); }
+
+  .section-title { text-align:center; font-family:'Luckiest Guy', cursive; font-style:italic; color:var(--gold); font-size:clamp(1.8rem,4vw,2.8rem); letter-spacing:2px; margin:3rem 0 2rem; text-transform:uppercase; }
+
+  .rank-page { max-width:1100px; margin:0 auto; padding:2rem 5% 4rem; }
+
+  .promo-rule { color:var(--gold); font-size:20px; font-weight:bold; text-align:center; margin-bottom:35px; padding:18px; border:2px solid var(--gold); border-radius:18px; background:rgba(255,217,0,0.08); box-shadow:0 0 20px rgba(255,217,0,0.15); }
+
+  .rank-container { display:flex; flex-direction:column; gap:35px; margin-bottom:60px; }
+  .division-box { border:2px solid var(--gold); border-radius:25px; padding:30px; background:rgba(255,217,0,0.05); box-shadow:0 0 20px rgba(255,217,0,0.15); }
+  .division-logo { width:130px; height:130px; object-fit:contain; display:block; margin:0 auto 20px; border-radius:20px; box-shadow:0 0 20px rgba(255,217,0,0.35); }
+  .division-box h2 { color:var(--gold); text-align:center; font-family:'Oswald', sans-serif; font-size:34px; margin-bottom:10px; letter-spacing:2px; text-transform:uppercase; font-style:italic; }
+  .promote-limit { text-align:center; color:#fff; font-style:italic; margin-bottom:25px; font-size:18px; }
+
+  /* Simple text ranks (Part 1) */
+  .rank-simple { color:#fff; padding:14px 0; width:45%; margin:0 auto; border-bottom:1px solid rgba(255,255,255,0.08); text-align:center; font-size:18px; transition:0.3s; }
+  .rank-simple:hover { background:rgba(255,217,0,0.08); color:var(--gold); }
+  .rank-simple:last-child { border-bottom:none; }
+
+  /* iC ranks with avatars (Part 2) */
+  .rank { width:46%; display:inline-block; vertical-align:top; text-align:center; margin:20px 1.5%; min-height:220px; }
+  .rank.trial-rank { width:96% !important; display:block !important; margin:0 auto 30px auto !important; min-height:auto !important; }
+  .users-wrapper { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; }
+  .single-user { display:flex; flex-direction:column; align-items:center; padding:14px 18px; border-radius:14px; transition:0.3s; cursor:default; }
+  .single-user:hover { background:rgba(255,217,0,0.08); }
+  .single-user:hover .username { color:var(--gold); }
+  .mini-avatar { width:110px; image-rendering:pixelated; }
+  .username { color:#fff; font-size:18px; font-weight:bold; margin-top:8px; transition:0.3s; }
+  .rank-title { color:var(--gold); font-size:18px; font-weight:bold; margin-top:10px; }
+  .vacant { color:red; font-weight:bold; }
+
+  footer { background:#000; color:#888; text-align:center; padding:2rem 5%; border-top:3px solid var(--gold); font-size:0.9rem; }
+  footer .f-logo { font-family:'Oswald', sans-serif; font-weight:700; font-style:italic; color:var(--gold); letter-spacing:2px; font-size:1.2rem; margin-bottom:0.5rem; text-transform:uppercase; }
+
+  @media (max-width:768px){
+    .hamburger { display:block; }
+    nav ul { display:none; width:100%; flex-direction:column; padding:1rem 0; }
+    nav ul.open { display:flex; }
+    .dropdown { position:static; display:block; background:#1a1a1a; }
+    .rank { width:100%; margin:20px 0; }
+    .rank.trial-rank { width:100% !important; }
+    .mini-avatar { width:90px; }
+    .rank-simple { width:90%; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/published/fis-modern.png?1790516707" alt="Federal Investigation Services">
+    </a>
+    <button class="hamburger" onclick="document.getElementById('navmenu').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navmenu">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="#">Resources &#9662;</a>
+          <div class="dropdown">
+            <a href="scripts.html">Scripts</a>
+            <a href="policies.html">Policies</a>
+            <a href="special-units.html">Special Units</a>
+          </div>
+        </li>
+        <li><a href="rank-list1.html" class="active">Rank List</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>F<span class="gold">i</span>S <span class="gold">Rank List!</span></h1>
+</section>
+
+<div class="rank-page">
+
+  <p class="promo-rule">Promoters must have at least 30 minutes of online time before promoting someone.<br>Employee being promoted must have at least 15 minutes of online time.</p>
+
+  <h2 class="section-title">Standard Ranks</h2>
+
+  <div class="rank-container">
+
+    <!-- STANDARD DIVISION -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b23134s36014s01114s11134s38014287499d443755197dd6014f904b278f4.gif" alt="Standard Division">
+      <h2>Standard Division</h2>
+      <p class="promote-limit">[cannot promote]</p>
+      <div class="rank-simple">Intern</div>
+      <div class="rank-simple">Field Agent I</div>
+      <div class="rank-simple">Field Agent II</div>
+      <div class="rank-simple">Field Agent III</div>
+      <div class="rank-simple">Negotiator in Training</div>
+      <div class="rank-simple">Negotiator I</div>
+      <div class="rank-simple">Negotiator II</div>
+      <div class="rank-simple">Negotiator III</div>
+      <div class="rank-simple">Lead Negotiator</div>
+      <div class="rank-simple">Liaison Officer</div>
+      <div class="rank-simple">Senior Liaison Officer</div>
+    </div>
+
+    <!-- SECURITY DIVISION -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b23134s01115s36044s12094s390145bfed08683e1ba54824d8bd8fde68778.gif" alt="Security Division">
+      <h2>Security Division</h2>
+      <p class="promote-limit">[cannot promote]</p>
+      <div class="rank-simple">Junior Security</div>
+      <div class="rank-simple">Security</div>
+      <div class="rank-simple">Senior Security</div>
+      <div class="rank-simple">Cybersecurity Inspector</div>
+      <div class="rank-simple">Entry Operative</div>
+      <div class="rank-simple">HQ Coordinator</div>
+      <div class="rank-simple">Watch Enforcer</div>
+      <div class="rank-simple">Security Handler</div>
+      <div class="rank-simple">Control Warden</div>
+      <div class="rank-simple">Zone Supervisor</div>
+    </div>
+
+    <!-- TRAINING DIVISION -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b23134s01114s36054s12054s39014f6446c50ccbe9fa66bcaa8e879d5c67e.gif" alt="Training Division">
+      <h2>Training Division</h2>
+      <p class="promote-limit">[can promote up to Zone Supervisor]</p>
+      <div class="rank-simple">Instructor in Training</div>
+      <div class="rank-simple">Guidance Instructor</div>
+      <div class="rank-simple">Training Expert I</div>
+      <div class="rank-simple">Training Expert II</div>
+      <div class="rank-simple">Senior Training Expert</div>
+      <div class="rank-simple">Forensics Analyst</div>
+      <div class="rank-simple">Negotiator Instructor</div>
+      <div class="rank-simple">Liaison Instructor</div>
+      <div class="rank-simple">Emissary Assistant</div>
+      <div class="rank-simple">Emissary Demonstrator</div>
+    </div>
+
+    <!-- HIGH RANK DIVISION -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b23134s01114s36014s12014s390141afda8869fa634f846617ec234492521.gif" alt="High Rank Division">
+      <h2>High Rank Division</h2>
+      <p class="promote-limit">[can promote up to Emissary Demonstrator]</p>
+      <div class="rank-simple">Junior Division Coordinator</div>
+      <div class="rank-simple">HR Adviser</div>
+      <div class="rank-simple">HR Supervisor</div>
+      <div class="rank-simple">HR Administrator</div>
+      <div class="rank-simple">Junior HQ Organizer</div>
+      <div class="rank-simple">Senior HQ Organizer</div>
+      <div class="rank-simple">Corporate Assistant</div>
+      <div class="rank-simple">Investigation Assistant</div>
+      <div class="rank-simple">Ordinance Supervisor</div>
+      <div class="rank-simple">Senior Ordinance Supervisor</div>
+    </div>
+
+    <!-- HUMAN RESOURCES -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b23134s01115s36124s12124s3901482f2380330125ec77b9d61909474ecb4.gif" alt="Human Resources">
+      <h2>Human Resources</h2>
+      <p class="promote-limit">[can promote up to Senior Ordinance Supervisor]</p>
+      <div class="rank-simple">Council Officer</div>
+      <div class="rank-simple">Conduct Specialist</div>
+      <div class="rank-simple">Operations Specialist</div>
+      <div class="rank-simple">Ops Manager Assistant</div>
+      <div class="rank-simple">Ops Manager</div>
+      <div class="rank-simple">Logistics Specialist</div>
+      <div class="rank-simple">Division Manager</div>
+      <div class="rank-simple">Senior Superintendent</div>
+      <div class="rank-simple">Deputy Superintendent</div>
+      <div class="rank-simple">Council Member</div>
+    </div>
+
+    <!-- INTELLIGENCE DIVISION -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b23134s01114s36224s12224s390143390b07433f593cdc36e45e78381024f.gif" alt="Intelligence Division">
+      <h2>Intelligence Division</h2>
+      <p class="promote-limit">[can promote up to Council Member]</p>
+      <div class="rank-simple">Junior Intelligence Officer</div>
+      <div class="rank-simple">Intelligence Officer</div>
+      <div class="rank-simple">Senior Intelligence Officer</div>
+      <div class="rank-simple">Data Collector</div>
+      <div class="rank-simple">Information Analyst</div>
+      <div class="rank-simple">Financial Analyst</div>
+      <div class="rank-simple">Administrative Analyst</div>
+      <div class="rank-simple">Management Specialist</div>
+      <div class="rank-simple">Evidence Specialist</div>
+      <div class="rank-simple">HR Consultant</div>
+      <div class="rank-simple">Lead Intelligence Officer</div>
+    </div>
+
+    <!-- PROFESSIONAL STAFF -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b23134s01114s36104s12104s3901405701495eb3122d0ac53a3b60ad28ab7.gif" alt="Professional Staff">
+      <h2>Professional Staff</h2>
+      <p class="promote-limit">[can promote up to Lead Intelligence Officer]</p>
+      <div class="rank-simple">Junior Detective</div>
+      <div class="rank-simple">Trainee Inspector</div>
+      <div class="rank-simple">Inspector</div>
+      <div class="rank-simple">Investigatory Officer</div>
+      <div class="rank-simple">Senior Investigatory Officer</div>
+      <div class="rank-simple">Homicide Detective</div>
+      <div class="rank-simple">Forensics Expert</div>
+      <div class="rank-simple">Patrol Supervisor</div>
+      <div class="rank-simple">Crime Scene Specialist</div>
+      <div class="rank-simple">Chief Detective</div>
+    </div>
+
+    <!-- HIGH MANAGEMENT -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b23134s01115s36184s12184s390145038589e219311eefca6f7faaea0e66e.gif" alt="High Management">
+      <h2>High Management</h2>
+      <p class="promote-limit">[can promote up to Chief Detective]</p>
+      <div class="rank-simple">Directorial Manager I</div>
+      <div class="rank-simple">Directorial Manager II</div>
+      <div class="rank-simple">Directorial Manager III</div>
+      <div class="rank-simple">Deputy Director</div>
+      <div class="rank-simple">Board Consultant I</div>
+      <div class="rank-simple">Board Consultant II</div>
+      <div class="rank-simple">Administration Executive I</div>
+      <div class="rank-simple">Administration Executive II</div>
+      <div class="rank-simple">Managing Director</div>
+      <div class="rank-simple">Senior Board Curator</div>
+    </div>
+
+    <!-- OFFICE OF ADMINISTRATION -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b23134s01114s36234s12234s3901431d0b939e8ad5ea2a32a69d0493a3737.gif" alt="Office of Administration">
+      <h2>Office of Administration</h2>
+      <p class="promote-limit">[can promote up to Senior Board Curator]</p>
+      <div class="rank-simple">Administration Officer</div>
+      <div class="rank-simple">Public Relations Officer</div>
+      <div class="rank-simple">Policy Advisor</div>
+      <div class="rank-simple">Special Advisor</div>
+      <div class="rank-simple">Assistant Chief Administrator</div>
+      <div class="rank-simple">Deputy Chief Administrator</div>
+      <div class="rank-simple">Internal Affairs Officer</div>
+      <div class="rank-simple">Ethics Officer</div>
+      <div class="rank-simple">Finance Balancer</div>
+      <div class="rank-simple">HQ Troubleshooter</div>
+      <div class="rank-simple">Chief Oversight Officer</div>
+    </div>
+
+    <!-- CORRESPONDING UNIT -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b23134s01114s36204s12204s39014668c0df7eab50f3171bcc17017f03bc6.gif" alt="Corresponding Unit">
+      <h2>Corresponding Unit</h2>
+      <p class="promote-limit">[can promote up to Chief Oversight Officer]</p>
+      <div class="rank-simple">Legal Advisor</div>
+      <div class="rank-simple">Parliament Liaison</div>
+      <div class="rank-simple">Security Reporter</div>
+      <div class="rank-simple">Training Journalist</div>
+      <div class="rank-simple">Correspondent</div>
+      <div class="rank-simple">Communications Correspondent</div>
+      <div class="rank-simple">Correspondence Advisor</div>
+      <div class="rank-simple">Legal Correspondent</div>
+      <div class="rank-simple">Global Correspondent</div>
+      <div class="rank-simple">Legislative Officer</div>
+    </div>
+
+    <!-- LEADERSHIP BOARD -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b23134s01114s36214s12214s39014b91bf43d83379b9c819d28e01959e6f9.gif" alt="Leadership Board">
+      <h2>Leadership Board</h2>
+      <p class="promote-limit">[can promote up to Legislative Officer]</p>
+      <div class="rank-simple">Secretariat</div>
+      <div class="rank-simple">Protection Lead</div>
+      <div class="rank-simple">Financial Lead</div>
+      <div class="rank-simple">Deputy Executive</div>
+      <div class="rank-simple">Executive</div>
+      <div class="rank-simple">Judiciary Officer</div>
+      <div class="rank-simple">Legal Supervisor</div>
+      <div class="rank-simple">Assistant Commissioner</div>
+      <div class="rank-simple">Deputy Commissioner</div>
+      <div class="rank-simple">Lead Commissioner</div>
+    </div>
+
+  </div>
+
+  <h2 class="section-title">iC Ranks</h2>
+
+  <div class="rank-container" id="ic-ranks">
+
+    <!-- TRIAL ELECTIVE -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b28134s01114s36114s43111s39114ada65d1b95f1e4e5eca467e835a9207d.gif" alt="Trial Elective">
+      <h2>Trial Elective</h2>
+      <div class="rank" data-rank-id="112" data-rank-name="Trial Elective">Trial Elective</div>
+    </div>
+
+    <!-- 4IC MINISTRY BOARD -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b28134s01114s36014s39014s430115a08349a3cc812603184b258c6448e9c.gif" alt="4IC Ministry Board">
+      <h2>4IC Ministry Board</h2>
+      <div class="rank" data-rank-id="113" data-rank-name="Trial Ministry Board">Trial Ministry Board</div>
+      <div class="rank" data-rank-id="114" data-rank-name="Minister of Defense">Minister of Defense</div>
+      <div class="rank" data-rank-id="115" data-rank-name="Minister of Communication">Minister of Communication</div>
+      <div class="rank" data-rank-id="116" data-rank-name="Minister of Agriculture">Minister of Agriculture</div>
+      <div class="rank" data-rank-id="117" data-rank-name="Minister of Commerce">Minister of Commerce</div>
+      <div class="rank" data-rank-id="118" data-rank-name="Minister of Interior">Minister of Interior</div>
+      <div class="rank" data-rank-id="119" data-rank-name="Minister of Finance">Minister of Finance</div>
+      <div class="rank" data-rank-id="120" data-rank-name="Minister of Manpower">Minister of Manpower</div>
+      <div class="rank" data-rank-id="121" data-rank-name="Minister of State">Minister of State</div>
+      <div class="rank" data-rank-id="122" data-rank-name="Deputy Prime Minister">Deputy Prime Minister</div>
+      <div class="rank" data-rank-id="123" data-rank-name="Prime Minister">Prime Minister</div>
+    </div>
+
+    <!-- 3IC TREASURER -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b28134s01114s36094s39094s431113a6006ebd24e3085b081f52375ac20fc.gif" alt="3IC Treasurer">
+      <h2>3IC Treasurer</h2>
+      <div class="rank" data-rank-id="124" data-rank-name="Trial Treasurer">Trial Treasurer</div>
+      <div class="rank" data-rank-id="125" data-rank-name="Treasurer">Treasurer</div>
+      <div class="rank" data-rank-id="126" data-rank-name="Capital Liaison">Capital Liaison</div>
+      <div class="rank" data-rank-id="127" data-rank-name="Asset Coordinator">Asset Coordinator</div>
+      <div class="rank" data-rank-id="128" data-rank-name="Advisory Auditor">Advisory Auditor</div>
+      <div class="rank" data-rank-id="129" data-rank-name="Finance Manager">Finance Manager</div>
+      <div class="rank" data-rank-id="130" data-rank-name="Board Consultant">Board Consultant</div>
+      <div class="rank" data-rank-id="131" data-rank-name="Strategic Director">Strategic Director</div>
+      <div class="rank" data-rank-id="132" data-rank-name="Chief Financial Lead">Chief Financial Lead</div>
+      <div class="rank" data-rank-id="133" data-rank-name="Grand Financier">Grand Financier</div>
+      <div class="rank" data-rank-id="134" data-rank-name="Chief of Staff">Chief of Staff</div>
+    </div>
+
+    <!-- 2IC OWNERSHIP -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b28134s01115s36204s39204s43111ca63fbfddeac6ea2bd3e9dc8a1c31bbd.gif" alt="2IC Ownership">
+      <h2>2IC Ownership</h2>
+      <div class="rank" data-rank-id="135" data-rank-name="Trial Owner">Trial Owner</div>
+      <div class="rank" data-rank-id="136" data-rank-name="Junior Owner">Junior Owner</div>
+      <div class="rank" data-rank-id="137" data-rank-name="Support Owner">Support Owner</div>
+      <div class="rank" data-rank-id="138" data-rank-name="Acting Owner">Acting Owner</div>
+      <div class="rank" data-rank-id="139" data-rank-name="Joint Owner">Joint Owner</div>
+      <div class="rank" data-rank-id="140" data-rank-name="Associate Owner">Associate Owner</div>
+      <div class="rank" data-rank-id="141" data-rank-name="Co-Owner">Co-Owner</div>
+      <div class="rank" data-rank-id="142" data-rank-name="Owner">Owner</div>
+      <div class="rank" data-rank-id="143" data-rank-name="Co-Executive Owner">Co-Executive Owner</div>
+      <div class="rank" data-rank-id="144" data-rank-name="Executive Owner">Executive Owner</div>
+      <div class="rank" data-rank-id="145" data-rank-name="Veteran Owner">Veteran Owner</div>
+    </div>
+
+    <!-- 1IC DIRECTORATE -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b28134s01114s36134s39134s43111fa5f421a8dbabe3b8b445184ac656ec4.gif" alt="1IC Directorate">
+      <h2>1IC Directorate</h2>
+      <div class="rank" data-rank-id="146" data-rank-name="Trial Directorate">Trial Directorate</div>
+      <div class="rank" data-rank-id="147" data-rank-name="Junior Directorate">Junior Directorate</div>
+      <div class="rank" data-rank-id="148" data-rank-name="Support Directorate">Support Directorate</div>
+      <div class="rank" data-rank-id="149" data-rank-name="Associate Directorate">Associate Directorate</div>
+      <div class="rank" data-rank-id="150" data-rank-name="Joint Directorate">Joint Directorate</div>
+      <div class="rank" data-rank-id="151" data-rank-name="Assistant Directorate">Assistant Directorate</div>
+      <div class="rank" data-rank-id="152" data-rank-name="Acting Directorate">Acting Directorate</div>
+      <div class="rank" data-rank-id="153" data-rank-name="Co-Directorate">Co-Directorate</div>
+      <div class="rank" data-rank-id="154" data-rank-name="Directorate">Directorate</div>
+      <div class="rank" data-rank-id="155" data-rank-name="Executive Directorate">Executive Directorate</div>
+      <div class="rank" data-rank-id="156" data-rank-name="Chief Directorate">Chief Directorate</div>
+    </div>
+
+    <!-- FOUNDER REPRESENTATIVES -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b09114s01115s36114s12114s39114274cdba1ed92928af00da79a23b12b60.gif" alt="Founder Representatives">
+      <h2>Founder Representatives</h2>
+      <div class="rank" data-rank-id="157" data-rank-name="Artx0115's representative">Artx0115's representative</div>
+      <div class="rank" data-rank-id="158" data-rank-name="tiia's representative">tiia's representative</div>
+      <div class="rank" data-rank-id="159" data-rank-name="2freechie's representative">2freechie's representative</div>
+      <div class="rank" data-rank-id="160" data-rank-name="SilentJadeXox's representative">SilentJadeXox's representative</div>
+      <div class="rank" data-rank-id="161" data-rank-name="james342james's representative">james342james&rsquo;s representative</div>
+      <div class="rank" data-rank-id="162" data-rank-name="Founder representative">Founder representative</div>
+    </div>
+
+    <!-- FOUNDATION -->
+    <div class="division-box">
+      <img class="division-logo" src="https://www.habbo.com/habbo-imaging/badge/b28114s01114s36114s39014s43111bd455b07d7f9492d4b7b702b80d4722c.gif" alt="Foundation">
+      <h2>Foundation</h2>
+      <div class="rank" data-rank-id="163" data-rank-name="Trial Founder">Trial Founder</div>
+      <div class="rank" data-rank-id="164" data-rank-name="Founder – Pathfinder">Founder &ndash; Pathfinder</div>
+      <div class="rank" data-rank-id="165" data-rank-name="Founder – Envoy">Founder &ndash; Envoy</div>
+      <div class="rank" data-rank-id="166" data-rank-name="Founder – Strategist">Founder &ndash; Strategist</div>
+      <div class="rank" data-rank-id="167" data-rank-name="Founder – Architect">Founder &ndash; Architect</div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="f-logo">Federal Investigation Services</div>
+  <p>&copy; 2026 FiS &mdash; Federal Investigation Services. All rights reserved.</p>
+  <p style="margin-top:0.4rem; font-size:0.8rem;">Built by the FiS Development Team</p>
+</footer>
+
+<script>
+// LIVE iC AVATAR FETCH — pulls users from portal API every 30s
+(function(){
+  const API_URL = "https://fis.portalhabbo.com/api/request/user_list";
+  const VACANT_FIGURE = "hr-165-39.hd-209-1.ch-225-66.lg-285-64.sh-300-64.wa-2001";
+
+  async function loadRanks(){
+    try {
+      const res = await fetch(API_URL);
+      const data = await res.json();
+
+      document.querySelectorAll(".rank").forEach(el => {
+        el.dataset.processed = "false";
+        el.classList.remove("trial-rank");
+      });
+
+      const usersByRank = {};
+      data.forEach(user => {
+        if(!usersByRank[user.rank]) usersByRank[user.rank] = [];
+        usersByRank[user.rank].push(user);
+      });
+
+      let sideIndex = 0;
+      document.querySelectorAll(".rank").forEach(el => {
+        const rankId = parseInt(el.dataset.rankId);
+        const rankName = el.dataset.rankName;
+        const isTrial = rankName.toLowerCase().includes("trial");
+        let dir;
+        if(isTrial){ el.classList.add("trial-rank"); dir = 3; }
+        else { dir = (sideIndex % 2 === 0) ? 2 : 4; sideIndex++; }
+
+        if(usersByRank[rankId] && usersByRank[rankId].length > 0){
+          const html = usersByRank[rankId].map(u => {
+            const avatar = `https://www.habbo.com/habbo-imaging/avatarimage?user=${encodeURIComponent(u.username)}&direction=${dir}&head_direction=3&gesture=nrm&action=wav&size=l`;
+            return `<div class="single-user"><img class="mini-avatar" src="${avatar}" alt="${u.username}"><span class="username">${u.username}</span></div>`;
+          }).join("");
+          el.innerHTML = `<div class="users-wrapper">${html}</div><div class="rank-title">${rankName}</div>`;
+        } else {
+          const vacant = `https://www.habbo.com/habbo-imaging/avatarimage?figure=${encodeURIComponent(VACANT_FIGURE)}&direction=${dir}&head_direction=3&gesture=nrm&action=wav&size=l`;
+          el.innerHTML = `<div class="users-wrapper"><div class="single-user"><img class="mini-avatar" src="${vacant}" alt="Vacant"><span class="vacant">VACANT</span></div></div><div class="rank-title">${rankName}</div>`;
+        }
+      });
+    } catch(e){
+      console.log("Rank API unavailable — showing text ranks.", e);
+    }
+  }
+  loadRanks();
+  setInterval(loadRanks, 30000);
+})();
+</script>
+
+</body>
+</html>
