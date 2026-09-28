@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scripts - Federal Investigation Services</title>
+<meta property="og:site_name" content="Federal Investigation Services" />
+<meta property="og:title" content="Scripts" />
+<meta property="og:description" content="Federal Investigation Services" />
+<meta property="og:image" content="https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/editor/fis-2.png?1778801564" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Patua+One&family=Oswald:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  :root { --gold:#ffdb00; --gold2:#ffd700; --dark:#1a1a1a; --text:#2a2a2a; --light-bg:#fcfbfb; }
+  body { font-family:'Montserrat', Arial, sans-serif; color:var(--text); background:#010101; line-height:1.6; }
+
+  header { background:rgba(0,0,0,0.85); position:sticky; top:0; z-index:1000; border-bottom:2px solid var(--gold); }
+  .nav-container { max-width:1200px; margin:0 auto; padding:0.6rem 2%; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+  .logo img { height:50px; width:auto; display:block; }
+  nav ul { list-style:none; display:flex; gap:0.3rem; flex-wrap:wrap; align-items:center; }
+  nav li { position:relative; }
+  nav a { color:#fff; text-decoration:none; padding:0.5rem 1rem; font-family:'Oswald', sans-serif; font-weight:700; font-style:italic; text-transform:uppercase; letter-spacing:1px; font-size:0.95rem; display:block; transition:color .2s; }
+  nav a:hover, nav a.active { color:var(--gold); }
+  .dropdown { position:absolute; top:100%; left:0; background:#111; min-width:180px; display:none; border-top:2px solid var(--gold); z-index:10; }
+  li:hover .dropdown { display:block; }
+  .dropdown a { padding:0.6rem 1.2rem; font-size:0.85rem; white-space:nowrap; }
+  .dropdown a:hover, .dropdown a.active { background:rgba(255,219,0,0.1); color:var(--gold); }
+  .hamburger { display:none; background:none; border:none; color:#fff; font-size:1.8rem; cursor:pointer; }
+
+  .hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+      url('https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/background-images/1250603927.jpg') center/cover no-repeat;
+    min-height:400px; display:flex; align-items:center; justify-content:center; padding:3rem 5%;
+  }
+  .hero h1 { font-family:'Luckiest Guy', cursive; font-weight:bold; font-style:italic; text-transform:uppercase; letter-spacing:1px; font-size:clamp(2rem, 5vw, 3.5rem); color:#fff; text-align:center; text-shadow:2px 2px 8px rgba(0,0,0,0.8); }
+  .hero h1 .gold { color:var(--gold); }
+
+  .scripts-section { background:#010101; padding:3rem 5% 5rem; }
+  .training-wrapper { width:90%; max-width:1100px; margin:0 auto; }
+  .button-row { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:25px; justify-content:center; }
+  .tab-btn { background:transparent; border:none; color:var(--gold); font-size:18px; font-weight:bold; font-family:'Oswald', sans-serif; padding:16px 22px; border-radius:40px; cursor:pointer; transition:0.3s; }
+  .tab-btn.active { background:var(--gold); color:#000; box-shadow:0 0 20px var(--gold); }
+  .tab-btn:hover { background:var(--gold); color:#000; }
+  .content-panel { border:3px solid var(--gold); border-radius:25px; padding:30px; background:rgba(0,0,0,0.85); box-shadow:0 0 30px rgba(255,217,0,0.2); }
+  #panel-title { text-align:center; color:var(--gold); font-family:'Luckiest Guy', cursive; font-style:italic; font-size:clamp(1.8rem, 4vw, 3rem); margin-bottom:30px; letter-spacing:2px; }
+  .tab-content { display:none; }
+  .active-tab { display:block; }
+  .tab-content iframe { width:100%; height:800px; border:none; border-radius:18px; background:#fff; }
+  .home-image { width:100%; max-width:400px; margin:0 auto; display:block; border-radius:18px; }
+
+  footer { background:#000; color:#888; text-align:center; padding:2rem 5%; border-top:3px solid var(--gold); font-size:0.9rem; }
+  footer .f-logo { font-family:'Oswald', sans-serif; font-weight:700; font-style:italic; color:var(--gold); letter-spacing:2px; font-size:1.2rem; margin-bottom:0.5rem; text-transform:uppercase; }
+
+  @media (max-width:768px){
+    .hamburger { display:block; }
+    nav ul { display:none; width:100%; flex-direction:column; padding:1rem 0; }
+    nav ul.open { display:flex; }
+    .dropdown { position:static; display:block; background:#1a1a1a; }
+    .tab-content iframe { height:500px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <img src="https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/published/fis-modern.png?1790516707" alt="Federal Investigation Services">
+    </a>
+    <button class="hamburger" onclick="document.getElementById('navmenu').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navmenu">
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="#" class="active">Resources &#9662;</a>
+          <div class="dropdown">
+            <a href="scripts.html" class="active">Scripts</a>
+            <a href="policies.html">Policies</a>
+            <a href="special-units.html">Special Units</a>
+          </div>
+        </li>
+        <li><a href="rank-list1.html">Rank List</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>F<span class="gold">i</span>S <span class="gold">Training Scripts!</span></h1>
+</section>
+
+<section class="scripts-section">
+  <div class="training-wrapper">
+    <div class="button-row">
+      <button class="tab-btn" onclick="toggleTab(event, 'intern')">Intern Script</button>
+      <button class="tab-btn" onclick="toggleTab(event, 'security')">Security Script</button>
+      <button class="tab-btn" onclick="toggleTab(event, 'trainer')">Trainer Script</button>
+      <button class="tab-btn" onclick="toggleTab(event, 'highrank')">High Rank Script</button>
+      <button class="tab-btn" onclick="toggleTab(event, 'hr')">Human Resources Script</button>
+      <button class="tab-btn" onclick="toggleTab(event, 'transfer')">Transfer Script</button>
+    </div>
+
+    <div class="content-panel">
+      <h1 id="panel-title">Welcome to the FiS Training Scripts</h1>
+
+      <div id="home" class="tab-content active-tab">
+        <img class="home-image" src="https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/editor/fis-2.png?1778801564" alt="FiS">
+      </div>
+      <div id="intern" class="tab-content">
+        <iframe src="https://docs.google.com/document/d/1YkW-wtv2Bu3-bn0n4oq4FpoBK5uPbNE5gGe7HOEsTbM/preview"></iframe>
+      </div>
+      <div id="security" class="tab-content">
+        <iframe src="https://docs.google.com/document/d/1ydQcwZQDfES-9zFESlbQN16bg-bXr_nuq-1nRYjxV0s/preview"></iframe>
+      </div>
+      <div id="trainer" class="tab-content">
+        <iframe src="https://docs.google.com/document/d/1M_B61zWE5BT_OgPGIWWtIGO_cuZAg2qN2me0iF68Scg/preview"></iframe>
+      </div>
+      <div id="highrank" class="tab-content">
+        <iframe src="https://docs.google.com/document/d/1Bz_HsZLrZb9ctoq0euccnrWmU4f2UXzohOtfGRqLCs4/preview"></iframe>
+      </div>
+      <div id="hr" class="tab-content">
+        <iframe src="https://docs.google.com/document/d/18v4tKUPAcy_9SIMtenMcaqj0D4YHNbB4Ti3agW2Mp_c/preview"></iframe>
+      </div>
+      <div id="transfer" class="tab-content">
+        <iframe src="https://docs.google.com/document/d/1SswG_WDs71rXiKFMvXrgzCsun62aaVj-LIi_oEfi6FA/preview"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-logo">Federal Investigation Services</div>
+  <p>&copy; 2026 FiS &mdash; Federal Investigation Services. All rights reserved.</p>
+  <p style="margin-top:0.4rem; font-size:0.8rem;">Built by the FiS Development Team</p>
+</footer>
+
+<script>
+function toggleTab(event, tabId) {
+  const selectedTab = document.getElementById(tabId);
+  const isAlreadyOpen = selectedTab.classList.contains('active-tab');
+  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active-tab'));
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  const title = document.getElementById('panel-title');
+  if (isAlreadyOpen) {
+    document.getElementById('home').classList.add('active-tab');
+    title.style.display = 'block';
+    title.innerText = 'Welcome to the FiS Training Scripts';
+    return;
+  }
+  selectedTab.classList.add('active-tab');
+  event.currentTarget.classList.add('active');
+  title.style.display = 'none';
+}
+</script>
+
+</body>
+</html>
