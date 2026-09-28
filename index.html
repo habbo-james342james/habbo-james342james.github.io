@@ -3,235 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Federal Investigation Services | FiS</title>
+<title>Federal Investigation Services - Home</title>
+<meta property="og:site_name" content="Federal Investigation Services" />
+<meta property="og:title" content="Federal Investigation Services" />
+<meta property="og:description" content="We want all of our members to enjoy the fruits of their labor, therefore, FiS pays daily to ensure their members can enjoy all the purchasables in Habbo." />
+<meta property="og:image" content="https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/published/fis-modern.png?1790516707" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Patua+One&family=Oswald:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
   :root {
-    --navy:#0a1628;
-    --navy2:#12264a;
-    --gold:#d4af37;
-    --gold-light:#f0d77a;
-    --text:#e8eef7;
-    --muted:#9fb0c8;
+    --gold:#ffdb00;
+    --gold2:#ffd700;
+    --dark:#1a1a1a;
+    --text:#2a2a2a;
+    --light-bg:#fcfbfb;
   }
-  body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:var(--navy);
-    color:var(--text);
-    line-height:1.6;
-  }
+  body { font-family:'Montserrat', Arial, sans-serif; color:var(--text); background:var(--light-bg); line-height:1.6; }
 
   /* ===== HEADER / NAV ===== */
   header {
-    background:linear-gradient(180deg, #060f1d 0%, #0a1628 100%);
-    border-bottom:3px solid var(--gold);
-    padding:1.2rem 5% 0.8rem;
-    text-align:center;
-    position:sticky; top:0; z-index:100;
+    background:rgba(0,0,0,0.85);
+    position:sticky; top:0; z-index:1000;
+    border-bottom:2px solid var(--gold);
   }
-  .logo {
-    font-size:1.6rem;
-    font-weight:900;
-    letter-spacing:3px;
-    color:var(--gold);
-    text-transform:uppercase;
-    text-decoration:none;
-    display:inline-block;
+  .nav-container {
+    max-width:1200px; margin:0 auto; padding:0.6rem 2%;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap;
   }
-  .logo span { color:#fff; }
-  nav { margin-top:0.8rem; display:flex; justify-content:center; flex-wrap:wrap; gap:0.3rem; }
+  .logo img { height:50px; width:auto; display:block; }
+  nav ul { list-style:none; display:flex; gap:0.3rem; flex-wrap:wrap; align-items:center; }
+  nav li { position:relative; }
   nav a {
-    color:var(--muted);
-    text-decoration:none;
-    padding:0.4rem 0.9rem;
-    font-weight:600;
-    font-size:0.95rem;
-    border-radius:4px;
-    transition:all .25s;
-    text-transform:uppercase;
-    letter-spacing:1px;
+    color:#fff; text-decoration:none; padding:0.5rem 1rem;
+    font-family:'Oswald', sans-serif; font-weight:700; font-style:italic;
+    text-transform:uppercase; letter-spacing:1px; font-size:0.95rem;
+    display:block; transition:color .2s;
   }
-  nav a:hover, nav a.active { color:var(--gold); background:rgba(212,175,55,0.1); }
+  nav a:hover, nav a.active { color:var(--gold); }
+  .dropdown { position:absolute; top:100%; left:0; background:#111; min-width:180px; display:none; border-top:2px solid var(--gold); z-index:10; }
+  li:hover .dropdown { display:block; }
+  .dropdown a { padding:0.6rem 1.2rem; font-size:0.85rem; white-space:nowrap; }
+  .dropdown a:hover { background:rgba(255,219,0,0.1); }
+  .hamburger { display:none; background:none; border:none; color:#fff; font-size:1.8rem; cursor:pointer; }
 
-  /* ===== HERO / CLOCKS ===== */
+  /* ===== HERO BANNER ===== */
   .hero {
     background:
-      radial-gradient(ellipse at top, rgba(212,175,55,0.12), transparent 60%),
-      linear-gradient(135deg, #0a1628 0%, #12264a 100%);
-    padding:3rem 5% 2.5rem;
-    text-align:center;
-    border-bottom:1px solid rgba(212,175,55,0.2);
+      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+      url('https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/background-images/1250603927.jpg') center/cover no-repeat;
+    min-height:630px;
+    display:flex; align-items:center; justify-content:center;
+    padding:3rem 5%;
   }
-  .hero h1 {
-    font-size:2.6rem;
-    color:#fff;
-    margin-bottom:0.3rem;
-    letter-spacing:2px;
+  .hero-grid {
+    max-width:1100px; width:100%;
+    display:grid; grid-template-columns:1fr 1fr; gap:2rem; align-items:center;
   }
-  .hero h1 span { color:var(--gold); }
-  .hero .tagline { color:var(--muted); font-size:1.1rem; margin-bottom:2rem; }
+  .hero-title {
+    font-family:'Patua One', cursive; font-weight:bold; font-style:italic;
+    font-size:clamp(2.5rem, 6vw, 5rem); line-height:1.05; color:#fff;
+    text-shadow:2px 2px 8px rgba(0,0,0,0.8);
+  }
+  .hero-title .gold {
+    background:linear-gradient(90deg, #ffd700, #ffdb00, #ffd700);
+    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  }
+  .hero-img { text-align:center; }
+  .hero-img img { max-width:100%; height:auto; filter:drop-shadow(0 8px 20px rgba(0,0,0,0.5)); }
 
-  .clocks { display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:1.8rem; }
-  .clock-box {
-    background:rgba(0,0,0,0.35);
-    border:1px solid var(--gold);
-    border-radius:10px;
-    padding:1rem 2rem;
-    min-width:180px;
+  /* ===== CLOCKS ===== */
+  .clocks-bar {
+    background:linear-gradient(180deg, #111, #000);
+    padding:1.5rem 5%;
+    display:flex; justify-content:center; gap:3rem; flex-wrap:wrap;
+    border-top:2px solid var(--gold); border-bottom:2px solid var(--gold);
   }
-  .clock-box .label { font-size:0.8rem; text-transform:uppercase; letter-spacing:2px; color:var(--muted); margin-bottom:0.3rem; }
-  .clock-box .time { font-size:2rem; font-weight:700; color:var(--gold-light); font-family:'Courier New', monospace; }
-
-  .pay-countdown {
-    background:rgba(212,175,55,0.08);
-    border:1px dashed var(--gold);
-    border-radius:10px;
-    display:inline-block;
-    padding:1rem 2.5rem;
+  .clock-box { text-align:center; }
+  .clock-label {
+    font-family:'Patua One', cursive; font-weight:bold; color:#fff;
+    font-size:clamp(1.1rem, 2.5vw, 1.6rem);
+    text-shadow:1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
   }
-  .pay-countdown .label { font-size:0.9rem; text-transform:uppercase; letter-spacing:2px; color:var(--muted); }
-  .pay-countdown .count { font-size:1.8rem; font-weight:800; color:var(--gold); margin:0.2rem 0; font-family:'Courier New', monospace; }
-  .pay-countdown .next { font-size:0.85rem; color:var(--muted); }
-
-  /* ===== SECTIONS ===== */
-  .section { padding:3.5rem 5%; max-width:1150px; margin:0 auto; }
-  .section-title {
-    text-align:center;
-    font-size:1.9rem;
-    color:var(--gold);
-    text-transform:uppercase;
-    letter-spacing:2px;
-    margin-bottom:2rem;
+  .clock-time {
+    font-family:'Patua One', cursive; font-weight:bold; color:var(--gold);
+    font-size:clamp(2rem, 5vw, 3.5rem); line-height:1.2;
+    text-shadow:1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
   }
-  .section-title::after {
-    content:''; display:block; width:60px; height:3px;
-    background:var(--gold); margin:0.7rem auto 0; border-radius:2px;
+  .pay-next {
+    font-family:'Patua One', cursive; font-weight:bold; color:#fff;
+    font-size:clamp(0.9rem, 2vw, 1.3rem); margin-top:4px;
+    text-shadow:1px 1px 0 #000;
   }
 
-  /* Feature cards */
-  .features { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:1.5rem; }
-  .feature {
-    background:linear-gradient(160deg, #12264a, #0a1628);
-    border:1px solid rgba(212,175,55,0.25);
-    border-top:4px solid var(--gold);
-    border-radius:10px;
-    padding:2rem 1.5rem;
-    transition:transform .3s, box-shadow .3s;
+  /* ===== FEATURES (white section) ===== */
+  .features {
+    background:var(--light-bg);
+    padding:4rem 5%;
+    max-width:1200px; margin:0 auto;
   }
-  .feature:hover { transform:translateY(-6px); box-shadow:0 12px 30px rgba(0,0,0,0.5); }
-  .feature .icon { font-size:2.2rem; margin-bottom:0.8rem; }
-  .feature h3 { color:var(--gold); font-size:1.25rem; margin-bottom:0.7rem; text-transform:uppercase; letter-spacing:1px; }
-  .feature p { color:var(--muted); font-size:0.95rem; }
+  .features-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:2rem; }
+  .feature-card { text-align:center; padding:1rem; }
+  .feature-card img { max-width:100%; height:140px; object-fit:contain; margin-bottom:1rem; }
+  .feature-card h3 {
+    font-family:'Luckiest Guy', cursive; font-weight:bold; font-style:italic;
+    text-transform:uppercase; letter-spacing:1px; font-size:1.7rem; color:var(--dark);
+    margin-bottom:0.8rem;
+  }
+  .feature-card p { color:var(--text); font-size:1rem; max-width:320px; margin:0 auto; }
 
-  /* Community banner */
+  /* ===== COMMUNITY SECTION ===== */
   .community {
-    text-align:center;
-    background:linear-gradient(135deg, rgba(212,175,55,0.1), rgba(18,38,74,0.5));
-    border-radius:14px;
-    padding:3rem 2rem;
-    margin:3rem auto;
-    max-width:900px;
-    border:1px solid rgba(212,175,55,0.3);
+    background:var(--light-bg);
+    padding:2rem 5% 4rem;
+    max-width:1100px; margin:0 auto;
+    display:grid; grid-template-columns:1fr 1.5fr; gap:3rem; align-items:center;
   }
-  .community h2 { font-size:1.7rem; margin-bottom:1.2rem; line-height:1.4; }
-  .community h2 span { color:var(--gold); text-transform:uppercase; letter-spacing:2px; }
-  .community p { color:var(--muted); font-size:1.05rem; max-width:700px; margin:0 auto; }
+  .community-img { text-align:center; }
+  .community-img img { max-width:280px; width:100%; height:auto; }
+  .community h2 {
+    font-family:'Luckiest Guy', cursive; font-weight:bold; font-style:italic;
+    font-size:2.2rem; line-height:1.3; color:var(--dark); margin-bottom:1rem;
+  }
+  .community h2 .gold { color:var(--gold2); text-shadow:1px 1px 0 rgba(0,0,0,0.1); }
+  .community p { color:var(--text); font-size:1.05rem; }
 
-  /* Buttons */
-  .btn-row { display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-top:2rem; }
-  .btn {
-    display:inline-block;
-    padding:0.9rem 2.2rem;
-    border-radius:6px;
-    font-weight:700;
-    text-decoration:none;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    font-size:0.95rem;
-    transition:all .25s;
-    border:2px solid transparent;
+  /* ===== CTA CARDS (black) ===== */
+  .cta-section { background:linear-gradient(180deg, var(--light-bg), #eaeaea); padding:3rem 5% 4rem; }
+  .cta-grid {
+    max-width:900px; margin:0 auto;
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:20px;
   }
-  .btn-gold { background:var(--gold); color:#0a1628; }
-  .btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 20px rgba(212,175,55,0.3); }
-  .btn-outline { border-color:var(--gold); color:var(--gold); background:transparent; }
-  .btn-outline:hover { background:var(--gold); color:#0a1628; transform:translateY(-2px); }
+  .cta-full { grid-column:1 / -1; }
+  .cta-card {
+    background:#000; border-radius:24px; padding:2rem 1.75rem;
+    text-align:center; display:flex; flex-direction:column; align-items:center;
+  }
+  .cta-kicker {
+    font-family:'Oswald', sans-serif; font-weight:700; font-style:italic;
+    text-transform:uppercase; letter-spacing:0.02em; color:#fff;
+    font-size:1.4rem; line-height:1.2; margin-bottom:1.5rem;
+  }
+  .cta-kicker .accent { color:var(--gold); }
+  .cta-btn {
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    width:100%; max-width:320px; padding:14px 20px;
+    background:var(--gold); color:#000;
+    font-family:'Oswald', sans-serif; font-weight:700; font-style:italic;
+    text-transform:uppercase; letter-spacing:0.02em; font-size:1rem;
+    text-decoration:none; border-radius:999px; transition:transform .15s, box-shadow .15s;
+  }
+  .cta-btn:hover { transform:translateY(-1px); box-shadow:0 0 32px rgba(255,219,0,0.75); color:#000; }
+  .cta-btn svg { width:20px; height:20px; flex-shrink:0; }
+  .radio-iframe { display:block; width:100%; height:240px; border:none; border-radius:12px; margin-bottom:1.5rem; background:#111; }
+  .canva-wrap { position:relative; width:100%; padding-top:56.25%; border-radius:12px; overflow:hidden; margin-bottom:1.5rem; background:#fff; }
+  .canva-wrap iframe { position:absolute; top:0; left:0; width:100%; height:100%; border:none; }
 
-  /* Radio */
-  .radio-box {
-    text-align:center;
-    background:rgba(0,0,0,0.3);
-    border:1px solid rgba(212,175,55,0.3);
-    border-radius:12px;
-    padding:2.5rem 2rem;
-    max-width:600px;
-    margin:0 auto;
-  }
-  .radio-now {
-    display:inline-flex; align-items:center; gap:0.6rem;
-    background:rgba(212,175,55,0.15);
-    padding:0.5rem 1.2rem; border-radius:20px;
-    margin-bottom:1rem;
-  }
-  .pulse {
-    width:10px; height:10px; border-radius:50%;
-    background:#e74c3c;
-    animation:pulse 1.5s infinite;
-  }
-  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
-  .radio-now .txt { font-size:0.85rem; color:var(--muted); text-transform:uppercase; letter-spacing:1px; }
-  .radio-song { font-size:1.4rem; font-weight:700; color:#fff; margin-bottom:1.5rem; }
-
-  /* Newsletter */
-  .newsletter {
-    background:linear-gradient(160deg, #12264a, #0a1628);
-    border:1px solid rgba(212,175,55,0.3);
-    border-radius:12px;
-    padding:2.5rem 2rem;
-    max-width:800px;
-    margin:0 auto;
-  }
-  .nl-contents { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:0.8rem; margin:1.5rem 0; }
-  .nl-item {
-    background:rgba(0,0,0,0.3);
-    border-left:3px solid var(--gold);
-    padding:0.7rem 1rem;
-    border-radius:4px;
-    font-size:0.92rem;
-    color:var(--text);
-  }
-  .nl-item .pg { color:var(--gold); font-weight:700; font-size:0.8rem; display:block; margin-top:0.2rem; }
-  .nl-giveaway {
-    background:rgba(231,76,60,0.12);
-    border:1px dashed #e74c3c;
-    border-radius:8px;
-    padding:1rem 1.5rem;
-    margin:1.5rem 0;
-    text-align:center;
-    color:#f5b7b1;
-    font-size:0.95rem;
-  }
-  .nl-giveaway strong { color:#e74c3c; }
-
-  /* X / Twitter */
-  .x-follow { text-align:center; }
-  .x-handle { font-size:1.3rem; font-weight:700; color:var(--gold); margin:0.5rem 0 1.2rem; }
-
-  /* Footer */
+  /* ===== FOOTER ===== */
   footer {
-    background:#060f1d;
-    border-top:3px solid var(--gold);
-    text-align:center;
-    padding:2rem 5%;
-    margin-top:3rem;
-    color:var(--muted);
+    background:#000; color:#888; text-align:center;
+    padding:2rem 5%; border-top:3px solid var(--gold);
     font-size:0.9rem;
   }
-  footer .f-logo { color:var(--gold); font-weight:800; letter-spacing:2px; margin-bottom:0.5rem; }
+  footer .f-logo {
+    font-family:'Oswald', sans-serif; font-weight:700; font-style:italic;
+    color:var(--gold); letter-spacing:2px; font-size:1.2rem; margin-bottom:0.5rem;
+    text-transform:uppercase;
+  }
 
-  @media (max-width:600px){
-    .hero h1 { font-size:1.8rem; }
-    .clock-box .time { font-size:1.5rem; }
-    .pay-countdown .count { font-size:1.4rem; }
+  @media (max-width:768px){
+    .hamburger { display:block; }
+    nav ul { display:none; width:100%; flex-direction:column; padding:1rem 0; }
+    nav ul.open { display:flex; }
+    .dropdown { position:static; display:block; background:#1a1a1a; }
+    .hero-grid { grid-template-columns:1fr; text-align:center; }
+    .features-grid { grid-template-columns:1fr; }
+    .community { grid-template-columns:1fr; text-align:center; }
+    .cta-grid { grid-template-columns:1fr; }
+    .clocks-bar { gap:1.5rem; }
   }
 </style>
 </head>
@@ -239,152 +189,200 @@
 
 <!-- ============ HEADER ============ -->
 <header>
-  <a href="#" class="logo">Federal <span>Investigation</span> Services</a>
-  <nav>
-    <a href="#" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#join">Join</a>
-    <a href="#newsletter">Newsletter</a>
-    <a href="#radio">Radio</a>
-    <a href="#portal">Portal</a>
-  </nav>
+  <div class="nav-container">
+    <a href="#" class="logo">
+      <img src="https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/published/fis-modern.png?1790516707" alt="Federal Investigation Services">
+    </a>
+    <button class="hamburger" onclick="document.getElementById('navmenu').classList.toggle('open')">&#9776;</button>
+    <nav>
+      <ul id="navmenu">
+        <li><a href="#" class="active">Home</a></li>
+        <li>
+          <a href="#">Resources &#9662;</a>
+          <div class="dropdown">
+            <a href="scripts.html">Scripts</a>
+            <a href="policies.html">Policies</a>
+            <a href="special-units.html">Special Units</a>
+          </div>
+        </li>
+        <li><a href="rank-list1.html">Rank List</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-<!-- ============ HERO + CLOCKS ============ -->
+<!-- ============ HERO ============ -->
 <section class="hero">
-  <h1>Welcome to <span>FiS</span></h1>
-  <p class="tagline">Federal Investigation Services &mdash; Where You Truly Belong</p>
-
-  <div class="clocks">
-    <div class="clock-box">
-      <div class="label">BST Clock</div>
-      <div class="time" id="bst">--:--:--</div>
+  <div class="hero-grid">
+    <div>
+      <h1 class="hero-title">
+        Federal<br>
+        <span class="gold">Investigation</span><br>
+        Services
+      </h1>
     </div>
-    <div class="clock-box">
-      <div class="label">GMT+8 Clock</div>
-      <div class="time" id="gmt8">--:--:--</div>
+    <div class="hero-img">
+      <img src="https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/fis-modern_orig.png" alt="FiS Badge">
     </div>
-  </div>
-
-  <div class="pay-countdown">
-    <div class="label">Time Until Next Pay</div>
-    <div class="count" id="pay">--h --m --s</div>
-    <div class="next">Next: 12 AM (GMT+8)</div>
   </div>
 </section>
 
+<!-- ============ CLOCKS ============ -->
+<div class="clocks-bar">
+  <div class="clock-box">
+    <div class="clock-label">BST Clock</div>
+    <div class="clock-time" id="time-bst">00:00:00</div>
+  </div>
+  <div class="clock-box">
+    <div class="clock-label">GMT+8 Clock</div>
+    <div class="clock-time" id="time-gmt8">00:00:00</div>
+  </div>
+  <div class="clock-box">
+    <div class="clock-label">Time Until Next Pay</div>
+    <div class="clock-time" id="pay-time">00h 00m</div>
+    <div class="pay-next" id="pay-next">Calculating...</div>
+  </div>
+</div>
+
 <!-- ============ FEATURES ============ -->
-<section class="section" id="about">
-  <h2 class="section-title">Why FiS?</h2>
-  <div class="features">
-    <div class="feature">
-      <div class="icon">&#128176;</div>
+<section class="features">
+  <div class="features-grid">
+    <div class="feature-card">
+      <img src="https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/published/fu.png?1778798122" alt="Pays Daily">
       <h3>Pays Daily</h3>
       <p>We want all of our members to enjoy the fruits of their labor, therefore, FiS pays daily to ensure their members can enjoy all the purchasables in Habbo.</p>
     </div>
-    <div class="feature">
-      <div class="icon">&#127881;</div>
-      <h3>Daily Events</h3>
+    <div class="feature-card">
+      <img src="https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/published/et.png?1778798141" alt="Daily Events">
+      <h3>dAILY eVENTS</h3>
       <p>FiS hosts events on a daily basis. We want to give our members another way to earn Habbo coins and by doing that, we host events on the daily to drive engagement and FUN!</p>
     </div>
-    <div class="feature">
-      <div class="icon">&#129309;</div>
-      <h3>Active Foundation</h3>
+    <div class="feature-card">
+      <img src="https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/published/foundation-team-bk.png?1778873442" alt="Active Foundation">
+      <h3>aCTIVE fOUNDATION</h3>
       <p>Every agency succeeds when their Foundation is active! Here at FiS you will see our Foundation team present on a daily basis.</p>
     </div>
   </div>
+</section>
 
-  <!-- Community banner -->
-  <div class="community">
-    <h2>At FiS, we believe in building a <span>Community</span><br>where fun and excitement thrive!</h2>
+<!-- ============ COMMUNITY ============ -->
+<section class="community">
+  <div class="community-img">
+    <img src="https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/editor/fis-2.png?1778801564" alt="FiS Community">
+  </div>
+  <div>
+    <h2>At FiS, we believe in building a<br><span class="gold">COMMUNITY</span> where fun and excitement thrive!</h2>
     <p>Here at Federal Investigation Services, we're more than just an agency &mdash; we're a family! We create a space where friendships grow, laughter is shared, and every day brings a new adventure. Join us and discover a place where you truly belong.</p>
-    <div class="btn-row" id="join">
-      <a href="#" class="btn btn-gold">Join FiS on Discord Today!</a>
-      <a href="#" class="btn btn-outline" id="portal">Sign Into Portal Here!</a>
-    </div>
   </div>
 </section>
 
-<!-- ============ RADIO ============ -->
-<section class="section" id="radio">
-  <h2 class="section-title">FiS Radio</h2>
-  <div class="radio-box">
-    <div class="radio-now">
-      <span class="pulse"></span>
-      <span class="txt">Now Playing &bull; Live</span>
-    </div>
-    <div class="radio-song">Coldplay &mdash; Talk</div>
-    <a href="#" class="btn btn-outline">Visit FiS Radio</a>
-  </div>
-</section>
+<!-- ============ CTA CARDS ============ -->
+<section class="cta-section">
+  <div class="cta-grid">
 
-<!-- ============ NEWSLETTER ============ -->
-<section class="section" id="newsletter">
-  <h2 class="section-title">FiS Newsletter</h2>
-  <div class="newsletter">
-    <div class="nl-contents">
-      <div class="nl-item">A Legacy of Impact, Warmth and Creativity<span class="pg">Page 1</span></div>
-      <div class="nl-item">A Legacy of Impact<span class="pg">Page 2</span></div>
-      <div class="nl-item">iC Promotions<span class="pg">Page 3</span></div>
-      <div class="nl-item">Memories<span class="pg">Pages 4 &ndash; 5</span></div>
-      <div class="nl-item">Learn Something New<span class="pg">Page 6</span></div>
-      <div class="nl-item">News Flash<span class="pg">Page 7</span></div>
-      <div class="nl-item">5Qs in Base<span class="pg">Page 8</span></div>
-      <div class="nl-item">September Birthdays<span class="pg">Page 9</span></div>
-      <div class="nl-item">Interview with our SV of the Month<span class="pg">Page 10</span></div>
+    <!-- Discord -->
+    <div class="cta-card">
+      <p class="cta-kicker">Join <span class="accent">FiS</span> on <span class="accent">Discord</span> Today!</p>
+      <a class="cta-btn" href="https://discord.gg/BJp3XedryZ" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.419 0 1.334-.956 2.419-2.157 2.419zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.419 0 1.334-.946 2.419-2.157 2.419z"/></svg>
+        Join Discord
+      </a>
     </div>
-    <div class="nl-giveaway">
-      &#127873; <strong>50c Sudoku Giveaway inside!</strong> Read through the newsletter to find this month's giveaway and get the chance of winning <strong>50C</strong>! Did you win last month's puzzle? Read to find out!
-    </div>
-    <div style="text-align:center;">
-      <a href="#" class="btn btn-gold">Read Full Newsletter</a>
-    </div>
-  </div>
-</section>
 
-<!-- ============ FOLLOW ON X ============ -->
-<section class="section x-follow">
-  <h2 class="section-title">FiS On X</h2>
-  <div class="x-handle">@HabboFiS</div>
-  <a href="https://x.com/HabboFiS" target="_blank" class="btn btn-outline">Follow @HabboFiS</a>
+    <!-- Portal -->
+    <div class="cta-card">
+      <p class="cta-kicker">Sign Into <span class="accent">Portal</span> Here!</p>
+      <a class="cta-btn" href="https://fis.portalhabbo.com/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Sign Into Portal
+      </a>
+    </div>
+
+    <!-- Radio (full width) -->
+    <div class="cta-card cta-full">
+      <p class="cta-kicker"><span class="accent">FiS</span> Radio</p>
+      <iframe src="https://zeno.fm/player/FiS-Radio" class="radio-iframe" title="FiS Radio Player" scrolling="no"></iframe>
+      <a class="cta-btn" href="https://zeno.fm/player/FiS-Radio" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.514 0-10-4.486-10-10S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10zm5.013-10.544l-7 4.5a1 1 0 0 1-1.013.022A1 1 0 0 1 8 15.022V8.978a1 1 0 0 1 1.513-.878l7 4a1 1 0 0 1 0 1.756z"/></svg>
+        Visit FiS Radio
+      </a>
+    </div>
+
+    <!-- Newsletter (full width) -->
+    <div class="cta-card cta-full">
+      <p class="cta-kicker"><span class="accent">FiS</span> Newsletter</p>
+      <div class="canva-wrap">
+        <iframe loading="lazy" src="https://www.canva.com/design/DAGpH8iFh7w/u4aFWboZ6iNwDI3yrbDcIg/view?embed" allowfullscreen title="FiS Newsletter"></iframe>
+      </div>
+      <a class="cta-btn" href="https://canva.link/fis-newsletter" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+        Read Full Newsletter
+      </a>
+    </div>
+
+    <!-- X / Twitter (full width) -->
+    <div class="cta-card cta-full">
+      <p class="cta-kicker"><span class="accent">FiS</span> On X</p>
+      <a class="cta-btn" href="https://x.com/HabboFiS" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.28l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        Follow @HabboFiS
+      </a>
+    </div>
+
+  </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
 <footer>
-  <div class="f-logo">FEDERAL INVESTIGATION SERVICES</div>
+  <div class="f-logo">Federal Investigation Services</div>
   <p>&copy; 2026 FiS &mdash; Federal Investigation Services. All rights reserved.</p>
-  <p style="margin-top:0.4rem; font-size:0.8rem;">Ad-free &bull; Built with pride by the FiS team</p>
+  <p style="margin-top:0.4rem; font-size:0.8rem;">Ad-free &bull; No Weebly branding &bull; Built by the FiS team</p>
 </footer>
 
 <script>
 (function(){
-  function pad(n){ return n<10 ? '0'+n : ''+n; }
-  function tick(){
-    var now = new Date();
-    var utc = now.getTime() + now.getTimezoneOffset()*60000;
+  // PAY TIMES -- GMT+8: 12AM, 6AM, 12PM, 6PM
+  const PAY_HOURS = [0, 6, 12, 18];
+  function pad(n){ return String(n).padStart(2,'0'); }
 
-    // BST = UTC+1 (British Summer Time)
-    var bst = new Date(utc + 3600000);
-    document.getElementById('bst').textContent =
-      pad(bst.getHours())+':'+pad(bst.getMinutes())+':'+pad(bst.getSeconds());
+  function updateClocks(){
+    const now = new Date();
+    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+
+    // BST = UTC+1
+    const bst = new Date(utc + 3600000);
+    document.getElementById("time-bst").textContent =
+      pad(bst.getHours())+":"+pad(bst.getMinutes())+":"+pad(bst.getSeconds());
 
     // GMT+8
-    var gmt8 = new Date(utc + 8*3600000);
-    document.getElementById('gmt8').textContent =
-      pad(gmt8.getHours())+':'+pad(gmt8.getMinutes())+':'+pad(gmt8.getSeconds());
+    const gmt8 = new Date(utc + (8 * 3600000));
+    document.getElementById("time-gmt8").textContent =
+      pad(gmt8.getHours())+":"+pad(gmt8.getMinutes())+":"+pad(gmt8.getSeconds());
 
-    // Next pay = midnight (00:00) GMT+8
-    var midnightGMT8 = new Date(utc + 8*3600000);
-    midnightGMT8.setHours(0,0,0,0);
-    midnightGMT8 = new Date(midnightGMT8.getTime() + 24*3600000); // next midnight
-    var diff = midnightGMT8.getTime() - (utc + 8*3600000);
-    var h = Math.floor(diff/3600000);
-    var m = Math.floor((diff%3600000)/60000);
-    var s = Math.floor((diff%60000)/1000);
-    document.getElementById('pay').textContent = pad(h)+'h '+pad(m)+'m '+pad(s)+'s';
+    // === PAY COUNTDOWN (4 pay times per day) ===
+    const currentHour = gmt8.getHours();
+    const currentMins = gmt8.getMinutes();
+    const currentTotalMins = currentHour * 60 + currentMins;
+    let nextPayHour, daysToAdd = 0;
+    for (let h of PAY_HOURS){
+      if (h * 60 >= currentTotalMins){ nextPayHour = h; break; }
+    }
+    if (nextPayHour === undefined){ nextPayHour = PAY_HOURS[0]; daysToAdd = 1; }
+
+    const nextPay = new Date(gmt8);
+    nextPay.setDate(nextPay.getDate() + daysToAdd);
+    nextPay.setHours(nextPayHour, 0, 0, 0);
+    const diffMs = nextPay - gmt8;
+    const diffH = Math.floor(diffMs / 3600000);
+    const diffM = Math.round((diffMs % 3600000) / 60000);
+    document.getElementById("pay-time").textContent = pad(diffH)+"h "+pad(diffM)+"m";
+
+    let displayHour = nextPayHour === 0 ? 12 : nextPayHour > 12 ? nextPayHour - 12 : nextPayHour;
+    let ampm = nextPayHour < 12 ? "AM" : "PM";
+    document.getElementById("pay-next").textContent = "Next: "+displayHour+" "+ampm+" (GMT+8)";
   }
-  tick();
-  setInterval(tick, 1000);
+  updateClocks();
+  setInterval(updateClocks, 1000);
 })();
 </script>
 
