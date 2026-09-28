@@ -3,74 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habbo FIS | Official Portal</title>
+    <title>Federal Investigation Services | FiS</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
         :root {
-            --primary: #6a0dad;
-            --secondary: #1a1a2e;
-            --accent: #e94560;
-            --light: #f4f4f4;
-            --text: #333;
+            --primary: #0a192f;
+            --accent: #ffd700;
+            --light: #f0f4f8;
+            --dark: #022;
+            --gold: #d4af37;
         }
-        body { background: #0f0f23; color: white; line-height: 1.6; }
-        header { background: var(--secondary); padding: 1rem 5%; position: sticky; top: 0; z-index: 100; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: white; text-decoration: none; }
-        nav { margin-top: 0.5rem; }
-        nav a { color: #ccc; margin-right: 1.5rem; text-decoration: none; transition: 0.3s; }
-        nav a:hover, nav a.active { color: var(--primary); }
-        .hero { padding: 4rem 5%; background: linear-gradient(135deg, var(--secondary), var(--primary)); text-align: center; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
-        .btn { display: inline-block; padding: 0.8rem 2rem; background: var(--accent); color: white; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
-        .section { padding: 3rem 5%; max-width: 1200px; margin: 0 auto; }
-        .section h2 { color: var(--primary); margin-bottom: 2rem; text-align: center; }
-        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-        .card { background: var(--secondary); padding: 2rem; border-radius: 10px; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        footer { background: var(--secondary); text-align: center; padding: 2rem; margin-top: 3rem; color: #888; }
+        body { background: var(--primary); color: white; line-height: 1.6; }
+        header { background: rgba(0,0,0,0.4); padding: 1.2rem 5%; text-align: center; border-bottom: 2px solid var(--gold); }
+        .logo-text { font-size: 2.2rem; font-weight: 900; letter-spacing: 2px; color: var(--gold); }
+        nav { margin-top: 1rem; }
+        nav a { color: #ccc; margin: 0 1rem; text-decoration: none; font-weight: 500; transition: 0.3s; }
+        nav a:hover { color: var(--gold); }
+        .hero { padding: 3rem 5%; text-align: center; background: linear-gradient(135deg, #0a192f, #1e3a5f); }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 0.5rem; color: var(--gold); }
+        .clocks { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; margin: 2rem 0; }
+        .clock-box { background: rgba(255,255,255,0.08); padding: 1.5rem 2rem; border-radius: 12px; border: 1px solid var(--gold); }
+        .clock-box h3 { font-size: 1rem; color: #aaa; margin-bottom: 0.5rem; }
+        .clock-box .time { font-size: 1.8rem; font-weight: bold; color: var(--gold); }
+        .countdown { font-size: 1.4rem; margin: 1rem 0; }
+        .section { padding: 2.5rem 5%; max-width: 1100px; margin: 0 auto; }
+        .section h2 { color: var(--gold); margin-bottom: 1.5rem; font-size: 1.8rem; text-align: center; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin: 2rem 0; }
+        .feature-card { background: rgba(255,255,255,0.06); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--gold); transition: 0.3s; }
+        .feature-card:hover { transform: translateY(-5px); background: rgba(255,255,255,0.1); }
+        .feature-card h3 { color: var(--gold); margin-bottom: 1rem; font-size: 1.2rem; }
+        .big-text { font-size: 1.5rem; text-align: center; max-width: 900px; margin: 2rem auto; line-height: 1.8; }
+        .big-text span { color: var(--gold); font-weight: bold; }
+        .button-row { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin: 2rem 0; }
+        .btn { padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 1rem; transition: 0.3s; border: 2px solid transparent; }
+        .btn-gold { background: var(--gold); color: #000; }
+        .btn-gold:hover { background: #fff; border-color: var(--gold); }
+        .btn-outline { border-color: var(--gold); color: var(--gold); background: transparent; }
+        .btn-outline:hover { background: var(--gold); color: #000; }
+        .newsletter { background: rgba(212,175,55,0.1); padding: 2rem; border-radius: 12px; margin-top: 2rem; }
+        .newsletter ul { list-style: none; margin: 1rem 0; }
+        .newsletter li { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        footer { text-align: center; padding: 2rem; border-top: 2px solid var(--gold); margin-top: 3rem; color: #888; }
     </style>
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">HABBO FIS</a>
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">News</a>
-            <a href="#">Staff</a>
-            <a href="#">Apply</a>
-            <a href="#">Ranks</a>
-        </nav>
-    </header>
 
-    <section class="hero">
-        <h1>Welcome to Habbo FIS</h1>
-        <p>Your official agency portal — professional, friendly, and growing.</p>
-        <a href="#" class="btn">Join Us Today</a>
-    </section>
+<header>
+    <div class="logo-text">FEDERAL INVESTIGATION SERVICES</div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Join</a>
+        <a href="#">Newsletter</a>
+        <a href="#">Radio</a>
+        <a href="#">Portal</a>
+    </nav>
+</header>
 
-    <section class="section">
-        <h2>About Us</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Who We Are</h3>
-                <p>A welcoming, active agency on Habbo — built on trust and teamwork.</p>
-            </div>
-            <div class="card">
-                <h3>Our Goals</h3>
-                <p>Help members grow, make friends, and have fun together every day.</p>
-            </div>
-            <div class="card">
-                <h3>Join Now</h3>
-                <p>Open to everyone — just fill in the application form and we'll get back to you!</p>
-            </div>
+<section class="hero">
+    <h1>Welcome to FiS</h1>
+    
+    <div class="clocks">
+        <div class="clock-box">
+            <h3>BST</h3>
+            <div class="time" id="clock-bst">--:--:--</div>
         </div>
-    </section>
+        <div class="clock-box">
+            <h3>GMT+8</h3>
+            <div class="time" id="clock-gmt8">--:--:--</div>
+        </div>
+    </div>
 
-    <footer>
-        <p>© 2026 Habbo FIS — All Rights Reserved</p>
-        <p>No ads, no tracking — just us 💜</p>
-    </footer>
+    <h3>Time Until Next Pay</h3>
+    <div class="countdown" id="countdown">Calculating...</div>
+    <p>Next: 12 AM (GMT+8)</p>
+</section>
+
+<section class="section">
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>💰 Pays Daily</h3>
+            <p>We want all of our members to enjoy the fruits of their labor, therefore, FiS pays daily to ensure their members can enjoy all the purchasables in Habbo.</p>
+        </div>
+        <div class="feature-card">
+            <h3>🎉 Daily Events</h3>
+            <p>FiS hosts events on a daily basis. We want to give our members another way to earn Habbo coins and by doing that, we host events on the daily to drive engagement and FUN!</p>
+        </div>
+        <div class="feature-card">
+            <h3>🤝 Active Foundation</h3>
+            <p>Every agency succeeds when their Foundation is active! Here at FiS you will see our Foundation team present on a daily basis.</p>
+        </div>
+    </div>
+
+    <div class="big-text">
+        At FiS, we believe in building a <span>COMMUNITY</span> where fun and excitement thrive!<br><br>
+        Here at Federal Investigation Services, we’re more than just an agency — we’re a family! We create a space where friendships grow, laughter is shared, and every day brings a new adventure. Join us and discover a place where you truly belong.
+    </div>
+
+    <div class="button-row">
+        <a href="#" class="btn btn-gold">Join FiS on Discord Today!</a>
+        <a href="#" class="btn btn-outline">Sign Into Portal Here!</a>
+    </div>
+
+    <h2>🎙️ FiS Radio</h2>
+    <p style="text-align:center; font-size:1.2rem;">Now Playing: Coldplay - Talk</p>
+    <div style="text-align:center; margin:1rem 0;">
+        <a href="#" class="btn btn-outline">Visit FiS Radio</a>
+    </div>
+
+    <h2>📰 FiS Newsletter</h2>
+    <div class="newsletter">
+        <ul>
+            <li>A Legacy of Impact — Page 2</li>
+            <li>Memories — Pages 4–5</li>
+            <li>50c Sudoku Giveaway — Find inside!</li>
+            <li>Interview with our SV of the Month — Page 10</li>
+            <li>September Birthdays • iC Promotions • 5Qs in Base & more!</li>
+        </ul>
+        <p style="margin-top:1rem;">Read through the newsletter to find this month's giveaway and get the chance of winning 50C! Did you win last month's puzzle?</p>
+        <div style="text-align:center; margin-top:1.5rem;">
+            <a href="#" class="btn btn-gold">Read Full Newsletter</a>
+        </div>
+    </div>
+
+    <div style="text-align:center; margin-top:3rem;">
+        <h2>Follow @HabboFiS on X</h2>
+        <p>Stay updated with all the latest news and announcements!</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Federal Investigation Services — Habbo FiS</p>
+    <p>Clean, ad-free, and proudly yours 💛</p>
+</footer>
+
+<script>
+// Live Clocks
+function updateClocks() {
+    const now = new Date();
+    
+    // BST = UTC+1
+    const bst = new Date(now.getTime() + 1 * 3600000);
+    document.getElementById('clock-bst').textContent = bst.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit', second:'2-digit' });
+    
+    // GMT+8 = UTC+8
+    const gmt8 = new Date(now.getTime() + 8 * 3600000);
+    document.getElementById('clock-gmt8').textContent = gmt8.toLocaleTimeString('en-GB', { hour:'2-digit', minute:'2-digit', second:'2-digit' });
+    
+    // Countdown to next midnight GMT+8
+    const nextMidnight = new Date(now);
+    nextMidnight.setUTCHours(16, 0, 0, 0);
+    if (nextMidnight <= now) nextMidnight.setUTCDate(nextMidnight.getUTCDate() + 1);
+    
+    const diff = nextMidnight - now;
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('countdown').textContent = `${h}h ${m}m ${s}s`;
+}
+updateClocks();
+setInterval(updateClocks, 1000);
+</script>
+
 </body>
 </html>
