@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policies - Federal Investigation Services</title>
+    <meta property="og:site_name" content="Federal Investigation Services" />
+    <meta property="og:title" content="Policies" />
+    <meta property="og:description" content="Federal Investigation Services" />
+    <meta property="og:image" content="https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/published/fis-modern.png?1790516707" />
+    <meta property="og:url" content="https://habbo-james342james.github.io/policies.html" />
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Montserrat:wght@400;700&family=Oswald:wght@400;700&family=Patua+One&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #0b0b0b; 
+            font-family: 'Montserrat', Arial, sans-serif; 
+            color: #fff;
+            line-height: 1.6;
+        }
+        .wrapper { min-height: 100vh; display: flex; flex-direction: column; }
+        
+        /* Header & Navigation */
+        .nav-wrap { background: rgba(0,0,0,0.9); padding: 15px 0; position: sticky; top: 0; z-index: 100; border-bottom: 2px solid #ffd900; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .nav-wrap .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo img { height: 60px; width: auto; }
+        
+        .desktop-nav ul { list-style: none; display: flex; gap: 30px; }
+        .desktop-nav a { 
+            color: #fff; text-decoration: none; font-weight: bold; 
+            font-family: 'Oswald', sans-serif; font-size: 18px;
+            transition: 0.3s;
+        }
+        .desktop-nav a:hover, .desktop-nav a.active { color: #ffd900; }
+        .hamburger { display: none; color: #ffd900; font-size: 30px; text-decoration: none; }
+        
+        /* Banner Section */
+        .banner-wrap {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/background-images/1250603927.jpg');
+            background-size: cover; background-position: center;
+            padding: 80px 20px; text-align: center;
+        }
+        .banner h1 {
+            font-family: 'Luckiest Guy', cursive;
+            font-size: clamp(36px, 8vw, 64px);
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        .banner h1 span { color: #ffd900; }
+        
+        /* Main Content */
+        .main-wrap { flex: 1; padding: 50px 20px; }
+        .policies-section {
+            background: #010101; border: 2px solid #ffd900; border-radius: 25px;
+            padding: 40px; max-width: 1100px; margin: 0 auto;
+            box-shadow: 0 0 30px rgba(255,217,0,0.15);
+        }
+        
+        /* Tab Buttons */
+        .button-row { 
+            display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px;
+            justify-content: center;
+        }
+        .tab-btn {
+            background: transparent; border: 2px solid #ffd900;
+            color: #ffd900; font-size: 16px; font-weight: bold;
+            padding: 14px 22px; border-radius: 40px; cursor: pointer;
+            transition: all 0.3s ease; font-family: 'Montserrat', sans-serif;
+        }
+        .tab-btn:hover, .tab-btn.active {
+            background: #ffd900; color: #000; box-shadow: 0 0 20px rgba(255,217,0,0.5);
+        }
+        
+        /* Content Panels */
+        .content-panel { min-height: 600px; }
+        #panel-title {
+            text-align: center; color: #ffd900; font-size: 36px;
+            margin-bottom: 30px; font-family: 'Luckiest Guy', cursive;
+            letter-spacing: 2px;
+        }
+        .tab-content { display: none; }
+        .tab-content.active-tab { display: block; }
+        .home-img { 
+            width: 100%; max-width: 600px; margin: 0 auto; display: block;
+            border-radius: 18px; border: 2px solid #ffd900;
+        }
+        iframe {
+            width: 100%; height: 800px; border: none;
+            border-radius: 18px; background: #fff;
+        }
+        
+        /* Footer */
+        .footer-wrap { 
+            background: #000; padding: 30px; text-align: center;
+            border-top: 2px solid #ffd900; margin-top: 50px;
+        }
+        .footer-text { color: #888; font-size: 14px; }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .hamburger { display: block; }
+            .policies-section { padding: 20px; }
+            .tab-btn { padding: 12px 16px; font-size: 14px; }
+            iframe { height: 600px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Navigation -->
+        <nav class="nav-wrap">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="https://habbo-fis.weebly.com/uploads/1/5/2/6/152683648/published/fis-modern.png?1790516707" alt="FiS Logo">
+                    </a>
+                </div>
+                <div class="desktop-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="scripts.html">Scripts</a></li>
+                        <li><a href="policies.html" class="active">Policies</a></li>
+                        <li><a href="special-units.html">Special Units</a></li>
+                        <li><a href="rank-list1.html">Rank List</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="hamburger" aria-label="Menu">☰</a>
+            </div>
+        </nav>
+
+        <!-- Banner -->
+        <div class="banner-wrap">
+            <div class="banner">
+                <h1><span>F</span>i<span>S</span> Policies!</h1>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-wrap">
+            <section class="policies-section">
+                <!-- Tab Buttons -->
+                <div class="button-row">
+                    <button class="tab-btn" onclick="toggleTab(event, 'home')" id="btn-home">Home</button>
+                    <button class="tab-btn" onclick="toggleTab(event, 'general')">General Policy</button>
+                    <button class="tab-btn" onclick="toggleTab(event, 'pay')">Pay Policy</button>
+                    <button class="tab-btn" onclick="toggleTab(event, 'svvip')">SV/VIP Policy</button>
+                    <button class="tab-btn" onclick="toggleTab(event, 'transfer')">Transfer Policy</button>
+                    <button class="tab-btn" onclick="toggleTab(event, 'promotion')">Promotion Policy</button>
+                    <button class="tab-btn" onclick="toggleTab(event, 'pa')">P.A Policy</button>
+                    <button class="tab-btn" onclick="toggleTab(event, 'loa')">LOA Policy</button>
+                    <button class="tab-btn" onclick="toggleTab(event, 'retirement')">Retirement Policy</button>
+                </div>
+
+                <!-- Content Area -->
+                <h2 id="panel-title">Welcome to the FiS Policies</h2>
+                <div class="content-panel">
+                    <!-- Home -->
+                    <div id="home" class="tab-content active-tab">
+                        <img src="https://152683648-727023704294221661.preview.editmysite.com/uploads/1/5/2/6/152683648/editor/fis-2.png?1778801564" class="home-img" alt="FiS">
+                    </div>
+                    
+                    <!-- General -->
+                    <div id="general" class="tab-content">
+                        <iframe src="https://docs.google.com/document/d/10Vx0g8-XETR3ww9kWuS0Emp69UF1uO57OcPXBLH7BNg/preview"></iframe>
+                    </div>
+                    
+                    <!-- Pay -->
+                    <div id="pay" class="tab-content">
+                        <iframe src="https://docs.google.com/document/d/1mPrD8_-O4zvapSBcEsvK6tdg8Tce4XL4MjX1Ncp4P-E/preview"></iframe>
+                    </div>
+                    
+                    <!-- SV/VIP -->
+                    <div id="svvip" class="tab-content">
+                        <iframe src="https://docs.google.com/document/d/1PXdp7JpDpi5IO0rW2ZxBFay47NiKACnJ8RAttWcbXI0/preview"></iframe>
+                    </div>
+                    
+                    <!-- Transfer -->
+                    <div id="transfer" class="tab-content">
+                        <iframe src="https://docs.google.com/document/d/1Mv5q1ZBe16IkxiZPdpw-HqyCDNWJtPWlD-2ciPw9hPI/preview"></iframe>
+                    </div>
+                    
+                    <!-- Promotion -->
+                    <div id="promotion" class="tab-content">
+                        <iframe src="https://docs.google.com/document/d/1CcCjHWo1uJf7p4_NIJ-2KXpQYN2h_43mA8Q4_OfZynw/preview"></iframe>
+                    </div>
+                    
+                    <!-- P.A -->
+                    <div id="pa" class="tab-content">
+                        <iframe src="https://docs.google.com/document/d/1uG_ZxyowLvdk0kDr-X_h-LBeJ39IKKuAgFGfnD8SCNA/preview"></iframe>
+                    </div>
+                    
+                    <!-- LOA -->
+                    <div id="loa" class="tab-content">
+                        <iframe src="https://docs.google.com/document/d/1JzbGQoLbaZhv3Py21whSvJo3JZ2UawYTtVMO0U1Bv-Y/preview"></iframe>
+                    </div>
+                    
+                    <!-- Retirement -->
+                    <div id="retirement" class="tab-content">
+                        <iframe src="https://docs.google.com/document/d/1cvcel5k3t64QBGEG6T8dHx82ZoTIDWWQsYH9MkjPzqE/preview"></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer-wrap">
+            <div class="footer-text">
+                Federal Investigation Services © 2026 — All Rights Reserved
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function toggleTab(event, tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active-tab');
+            });
+            // Remove active from all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            const selectedTab = document.getElementById(tabId);
+            const title = document.getElementById('panel-title');
+            
+            // Show selected tab
+            selectedTab.classList.add('active-tab');
+            event.currentTarget.classList.add('active');
+            
+            // Show/hide title
+            if (tabId === 'home') {
+                title.style.display = 'block';
+                title.textContent = 'Welcome to the FiS Policies';
+            } else {
+                title.style.display = 'none';
+            }
+        }
+        
+        // Mobile menu toggle (basic)
+        document.querySelector('.hamburger').addEventListener('click', e => {
+            e.preventDefault();
+            alert('Mobile menu — links: Home | Scripts | Policies | Special Units | Rank List');
+        });
+    </script>
+</body>
+</html>
